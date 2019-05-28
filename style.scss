@@ -17,6 +17,7 @@ $body-background-color: $beige-lighter;
 @import "~bulma/sass/grid/columns.sass";
 @import "~bulma/sass/elements/title.sass";
 @import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/utilities/mixins.sass";
 
 body {
   font-family: "Roboto", sans-serif;
@@ -50,7 +51,23 @@ h1.title {
     width: 100%;
     background: #222;
     line-height: 42px;
-    padding-left: 15px;
+    padding-left: 12px;
+
+    @include touch {
+      & {
+        height: 30px;
+        line-height: 34px;
+        padding-left: 9px;
+      }
+    }
+
+    @include mobile {
+      & {
+        height: 18px;
+        line-height: 18px;
+        padding-left: 5px;
+      }
+    }
 
     .circle {
       width: 15px;
@@ -58,6 +75,22 @@ h1.title {
       display: inline-block;
       border-radius: 50%;
       margin-right: 4px;
+
+      @include touch {
+        & {
+          width: 10px;
+          height: 10px;
+          margin-right: 3px;
+        }
+      }
+
+      @include mobile {
+        & {
+          width: 8px;
+          height: 8px;
+          margin-right: 2px;
+        }
+      }
 
       &.red {
         background-color: rgb(255, 71, 71);
