@@ -5,6 +5,7 @@
  "main": "index.js",
  "dependencies": {
   "bulma": "^0.7.5",
+  "bulma-prefers-dark": "0.1.0-beta.0",
   "clipboard": "^2.0.4",
   "parcel-bundler": "^1.12.3",
   "sass": "^1.21.0"

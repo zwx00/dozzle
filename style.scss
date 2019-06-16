@@ -12,6 +12,7 @@ $link: $pink;
 $body-background-color: $beige-lighter;
 
 @import "~bulma/sass/utilities/_all.sass";
+
 @import "~bulma/sass/base/_all.sass";
 @import "~bulma/sass/layout/hero.sass";
 @import "~bulma/sass/grid/columns.sass";
@@ -19,12 +20,21 @@ $body-background-color: $beige-lighter;
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/utilities/mixins.sass";
 
+@import "~bulma-prefers-dark/sass/utilities/_all";
+
+@include prefers-scheme(dark) {
+  @import "~bulma-prefers-dark/sass/base/_all.sass";
+  @import "~bulma-prefers-dark/sass/layout/hero.sass";
+  @import "~bulma-prefers-dark/sass/elements/title.sass";
+  @import "~bulma-prefers-dark/sass/elements/button.sass";
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 500;
 }
 .subtitle {
