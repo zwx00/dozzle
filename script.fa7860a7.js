@@ -4,4 +4,3 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{}],"mpVp":[function(require,module,exports) {
 "use strict";var e=r(require("clipboard"));function r(e){return e&&e.__esModule?e:{default:e}}new e.default(".copy");
 },{"clipboard":"FvGE"}]},{},["mpVp"], null)
-//# sourceMappingURL=/script.4739b482.js.map
