@@ -76,27 +76,34 @@
       <div class="hero-body">
         <div class="container">
           <div class="columns is-vcentered">
-            <div class="column has-text-centered is-hidden-mobile">
-              <img src="media/iphone.webp" alt="Dozzle on the iPhone" class="screenshot" />
+            <div class="column has-text-centered is-hidden-mobile is-narrow">
+              <picture class="screenshot">
+                <source srcset="media/iphone.webp" type="image/webp" />
+                <source srcset="media/iphone.jpg" type="image/jpeg" />
+                <img src="media/iphone.jpg" alt="Dozzle on the iPhone" class="screenshot" />
+              </picture>
             </div>
-            <div class="column is-8 is-offset-1">
+            <div class="column is-8">
               <h1 class="title is-2">
                 About Dozzle
               </h1>
               <div class="is-6">
-                Dozzle is a simple and responsive application that provides you with a web based interface to monitor your
+                Dozzle is a simple and responsive application that provides you with a web based interface to monitor
+                your
                 <a href="https://www.docker.com/">Docker</a> container logs live. It doesn’t store log information, it
                 is for live monitoring of your container logs only.
-                <div class="is-hidden-mobile">
-                  <div class="has-text-right">
-                    <button
-                      class="button is-small copy"
-                      data-clipboard-text="docker run --detach --volume=/var/run/docker.sock:/var/run/docker.sock -p 8080:8080 amir20/dozzle"
-                    >
-                      Copy
-                    </button>
-                  </div>
-                  <pre><code>docker run --detach --volume=/var/run/docker.sock:/var/run/docker.sock -p 8080:8080 amir20/dozzle</code></pre>
+                <div class="has-text-right">
+                  <button
+                    class="button is-small copy"
+                    data-clipboard-text="docker run --detach --volume=/var/run/docker.sock:/var/run/docker.sock -p 8080:8080 amir20/dozzle"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <div class="code">
+                  <code>
+                    docker run --detach --volume=/var/run/docker.sock:/var/run/docker.sock -p 8080:8080 amir20/dozzle
+                  </code>
                 </div>
                 <br /><br /><br />
                 <footer class="footer">

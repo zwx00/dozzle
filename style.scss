@@ -29,6 +29,8 @@ $body-background-color: $beige-lighter;
   @import "~bulma-prefers-dark/sass/elements/button.sass";
 }
 
+$yellow: rgba(211, 196, 5, 0.8);
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -47,7 +49,7 @@ body {
 }
 
 .yellow-highlight {
-  box-shadow: inset 0 -6px 0 rgba(211, 196, 5, 0.8);
+  box-shadow: inset 0 -6px 0 $yellow;
 }
 
 .footer {
@@ -133,11 +135,19 @@ a:not(.button) {
   }
 }
 
-pre {
-  box-shadow: 0 0 0 2px rgba(211, 196, 5, 0.8);
+.scroll-right {
+  overflow-x: scroll;
+}
+
+.code {
+  box-shadow: 0 0 0 2px $yellow;
   border-radius: 3px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  background: #222;
+  padding: 0.8em 1em;
+  code {
+    background: #222;
+    color: #fff;
+  }
 }
 
 .button.copy {
@@ -150,17 +160,17 @@ pre {
   padding-bottom: 0;
   padding-top: 0;
   &:hover {
-    background-color: rgba(211, 196, 5, 0.8);
+    background-color: $yellow;
     color: rgba(0, 0, 0, 0.7);
   }
 }
 
-img.screenshot {
+.screenshot {
   filter: drop-shadow(0 0 0.75rem #333);
   width: 400px;
   max-width: unset;
   margin-top: -50px;
-  margin-left: -50px;
+  margin-left: -30px;
 }
 
 #docker-image {
@@ -169,8 +179,7 @@ img.screenshot {
 
 html {
   scroll-snap-type: y mandatory;
-}
-
-section.hero {
-  scroll-snap-align: start;
+  section.hero {
+    scroll-snap-align: start;
+  }
 }
