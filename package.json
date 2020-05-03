@@ -26,7 +26,7 @@
   "prebuild": "npx del dist",
   "build": "npx parcel build --no-source-maps index.html",
   "dev": "npx parcel index.html",
-  "predeploy": "npm run build",
+  "predeploy": "yarn build",
   "deploy": "gh-pages -d dist"
  },
  "author": "",
