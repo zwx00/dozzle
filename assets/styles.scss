@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "~bulma/sass/utilities/initial-variables.sass";
+@import "node_modules/bulma/sass/utilities/initial-variables.sass";
 
 $body-family: "Roboto", sans-serif;
 $body-background-color: var(--body-background-color);
@@ -25,11 +25,7 @@ $panel-heading-color: var(--panel-heading-color);
 $link: $turquoise;
 $link-active: $grey-dark;
 
-@import "~bulma";
-@import "../node_modules/splitpanes/dist/splitpanes.css";
-@import "~buefy/src/scss/utils/_all";
-@import "~buefy/src/scss/components/_dropdown";
-@import "~buefy/src/scss/components/_switch";
+@import "node_modules/bulma/bulma.sass";
 
 html {
   --scheme-main: #{$black};

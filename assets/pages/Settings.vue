@@ -86,10 +86,10 @@
 </template>
 
 <script>
-import gt from "semver/functions/gt";
-import valid from "semver/functions/valid";
-import { mapActions, mapState } from "vuex";
-import Icon from "../components/Icon";
+// import gt from "semver/functions/gt";
+// import valid from "semver/functions/valid";
+// import { mapActions, mapState } from "vuex";
+import Icon from "../components/Icon.vue";
 import config from "../store/config";
 
 export default {
@@ -120,26 +120,26 @@ export default {
     };
   },
   methods: {
-    ...mapActions({
-      updateSetting: "UPDATE_SETTING",
-    }),
+    // ...mapActions({
+    //   updateSetting: "UPDATE_SETTING",
+    // }),
   },
   computed: {
-    ...mapState(["settings"]),
-    ...["search", "size", "smallerScrollbars", "showTimestamp", "showAllContainers", "lightTheme"].reduce(
-      (map, name) => {
-        map[name] = {
-          get() {
-            return this.settings[name];
-          },
-          set(value) {
-            this.updateSetting({ [name]: value });
-          },
-        };
-        return map;
-      },
-      {}
-    ),
+    // ...mapState(["settings"]),
+    // ...["search", "size", "smallerScrollbars", "showTimestamp", "showAllContainers", "lightTheme"].reduce(
+    //   (map, name) => {
+    //     map[name] = {
+    //       get() {
+    //         return this.settings[name];
+    //       },
+    //       set(value) {
+    //         this.updateSetting({ [name]: value });
+    //       },
+    //     };
+    //     return map;
+    //   },
+    //   {}
+    // ),
   },
 };
 </script>

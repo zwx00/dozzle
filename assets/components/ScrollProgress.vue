@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import throttle from "lodash.throttle";
+// import { mapState } from "vuex";
+import { throttle } from "lodash-es";
 
 export default {
   name: "ScrollProgress",
@@ -41,7 +41,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["activeContainers"]),
+    // ...mapState(["activeContainers"]),
   },
   methods: {
     attachEvents() {

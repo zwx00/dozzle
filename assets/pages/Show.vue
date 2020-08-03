@@ -1,11 +1,11 @@
 <template> </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
+// import { mapActions, mapGetters, mapState } from "vuex";
 export default {
   props: [],
   name: "Show",
-  computed: mapGetters(["visibleContainers"]),
+  // computed: mapGetters(["visibleContainers"]),
   watch: {
     visibleContainers(newValue) {
       if (newValue) {

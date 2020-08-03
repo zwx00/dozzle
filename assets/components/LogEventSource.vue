@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import debounce from "lodash.debounce";
-import InfiniteLoader from "./InfiniteLoader";
+import { debounce } from "lodash-es";
+import InfiniteLoader from "./InfiniteLoader.vue";
 import config from "../store/config";
 
 export default {

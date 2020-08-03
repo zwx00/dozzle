@@ -1,17 +1,12 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Meta from "vue-meta";
-import Dropdown from "buefy/dist/esm/dropdown";
-import Switch from "buefy/dist/esm/switch";
-import store from "./store";
+import { createApp } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
+// import Switch from "buefy/dist/esm/switch";
+// import store from "./store";
 import config from "./store/config";
 import App from "./App.vue";
 import { Container, Settings, Index, Show, ContainerNotFound, PageNotFound } from "./pages";
 
-Vue.use(VueRouter);
-Vue.use(Meta);
-Vue.use(Dropdown);
-Vue.use(Switch);
+import "./styles.scss";
 
 const routes = [
   {
@@ -47,14 +42,11 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: config.base + "/",
+const router = createRouter({
+  history: createWebHistory(config.base + "/"),
   routes,
 });
 
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount("#app");
+const app = createApp(App);
+app.use(router);
+app.mount("#app");

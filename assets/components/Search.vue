@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+// import { mapActions, mapState } from "vuex";
 import hotkeys from "hotkeys-js";
-import Icon from "./Icon";
+import Icon from "./Icon.vue";
 
 export default {
   props: [],
@@ -48,16 +48,16 @@ export default {
     });
   },
   methods: {
-    ...mapActions({
-      updateSearchFilter: "SET_SEARCH",
-    }),
+    // ...mapActions({
+    //   updateSearchFilter: "SET_SEARCH",
+    // }),
     resetSearch() {
       this.showSearch = false;
       this.filter = "";
     },
   },
   computed: {
-    ...mapState(["searchFilter", "settings"]),
+    // ...mapState(["searchFilter", "settings"]),
     filter: {
       get() {
         return this.searchFilter;

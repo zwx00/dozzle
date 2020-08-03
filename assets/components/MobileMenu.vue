@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 
 export default {
   props: [],
@@ -40,7 +40,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["activeContainersById", "visibleContainers"]),
+    // ...mapGetters(["activeContainersById", "visibleContainers"]),
   },
   watch: {
     $route(to, from) {

@@ -1,10 +1,10 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import storage from "store/dist/store.modern";
+// import Vue from "vue";
+// import Vuex from "vuex";
+// import storage from "store/dist/store.modern";
 import { DEFAULT_SETTINGS, DOZZLE_SETTINGS_KEY } from "./settings";
 import config from "./config";
 
-Vue.use(Vuex);
+// Vue.use(Vuex);
 
 const mql = window.matchMedia("(max-width: 770px)");
 
@@ -80,12 +80,3 @@ const getters = {
 const es = new EventSource(`${config.base}/api/events/stream`);
 es.addEventListener("containers-changed", (e) => setTimeout(() => store.dispatch("FETCH_CONTAINERS"), 1000), false);
 mql.addListener((e) => store.commit("SET_MOBILE_WIDTH", e.matches));
-
-const store = new Vuex.Store({
-  state,
-  getters,
-  actions,
-  mutations,
-});
-
-export default store;

@@ -7,10 +7,10 @@
   </ul>
 </template>
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
+// import { mapActions, mapGetters, mapState } from "vuex";
 import AnsiConvertor from "ansi-to-html";
 import DOMPurify from "dompurify";
-import RelativeTime from "./RelativeTime";
+import RelativeTime from "./RelativeTime.vue";
 
 const ansiConvertor = new AnsiConvertor({ escapeXML: true });
 
@@ -35,7 +35,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["searchFilter", "settings"]),
+    // ...mapState(["searchFilter", "settings"]),
     filtered() {
       const { searchFilter, messages } = this;
       if (searchFilter) {

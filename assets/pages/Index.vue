@@ -74,9 +74,8 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
-import Icon from "../components/Icon";
-import PastTime from "../components/PastTime";
+import Icon from "../components/Icon.vue";
+import PastTime from "../components/PastTime.vue";
 import config from "../store/config";
 
 export default {
@@ -87,6 +86,8 @@ export default {
       version: config.version,
       search: null,
       sort: "running",
+      containers: [],
+      runningContainers: [],
     };
   },
   methods: {
@@ -98,16 +99,16 @@ export default {
     },
   },
   computed: {
-    ...mapState(["containers"]),
-    mostRecentContainers() {
-      return [...this.containers].sort((a, b) => b.created - a.created);
-    },
-    runningContainers() {
-      return this.mostRecentContainers.filter((c) => c.state === "running");
-    },
-    allContainers() {
-      return this.containers;
-    },
+    // ...mapState(["containers"]),
+    // mostRecentContainers() {
+    //   return [...this.containers].sort((a, b) => b.created - a.created);
+    // },
+    // runningContainers() {
+    //   return this.mostRecentContainers.filter((c) => c.state === "running");
+    // },
+    // allContainers() {
+    //   return this.containers;
+    // },
     results() {
       if (this.search) {
         const term = this.search.toLowerCase();

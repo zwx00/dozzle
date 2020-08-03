@@ -1,4 +1,4 @@
-const config = JSON.parse(document.querySelector("script#config__json").textContent);
+const config = { version: "dev", base: "" };
 if (config.version == "{{ .Version }}") {
   config.version = "dev";
   config.base = "";

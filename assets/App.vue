@@ -1,28 +1,9 @@
 <template>
   <main>
-    <mobile-menu v-if="isMobile"></mobile-menu>
+    <side-menu></side-menu>
 
-    <splitpanes @resized="onResized($event)">
-      <pane min-size="10" :size="settings.menuWidth" v-if="!isMobile && !collapseNav">
-        <side-menu></side-menu>
-      </pane>
-      <pane min-size="10">
-        <splitpanes>
-          <pane class="has-min-height router-view">
-            <search></search>
-            <router-view></router-view>
-          </pane>
-          <pane v-for="other in activeContainers" :key="other.id" v-if="!isMobile">
-            <scrollable-view>
-              <template v-slot:header>
-                <container-title :value="other.name" closable @close="removeActiveContainer(other)"></container-title>
-              </template>
-              <log-viewer-with-source :id="other.id"></log-viewer-with-source>
-            </scrollable-view>
-          </pane>
-        </splitpanes>
-      </pane>
-    </splitpanes>
+    <router-view></router-view>
+
     <button
       @click="collapseNav = !collapseNav"
       class="button is-small is-rounded is-settings-control"
@@ -38,16 +19,13 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
-import { Splitpanes, Pane } from "splitpanes";
-
-import LogViewerWithSource from "./components/LogViewerWithSource";
-import ScrollableView from "./components/ScrollableView";
-import SideMenu from "./components/SideMenu";
-import MobileMenu from "./components/MobileMenu";
-import Search from "./components/Search";
-import ContainerTitle from "./components/ContainerTitle";
-import Icon from "./components/Icon";
+import LogViewerWithSource from "./components/LogViewerWithSource.vue";
+import ScrollableView from "./components/ScrollableView.vue";
+import SideMenu from "./components/SideMenu.vue";
+import MobileMenu from "./components/MobileMenu.vue";
+import Search from "./components/Search.vue";
+import ContainerTitle from "./components/ContainerTitle.vue";
+import Icon from "./components/Icon.vue";
 
 export default {
   name: "App",
@@ -57,8 +35,6 @@ export default {
     SideMenu,
     MobileMenu,
     ScrollableView,
-    Splitpanes,
-    Pane,
     Search,
     ContainerTitle,
   },
@@ -75,50 +51,50 @@ export default {
     };
   },
   async created() {
-    await this.fetchContainerList();
-    this.title = `${this.visibleContainers.length} containers`;
+    // await this.fetchContainerList();
+    // this.title = `${this.visibleContainers.length} containers`;
   },
   mounted() {
-    if (this.hasSmallerScrollbars) {
-      document.documentElement.classList.add("has-custom-scrollbars");
-    }
-    if (this.hasLightTheme) {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-    this.menuWidth = this.settings.menuWidth;
+    // if (this.hasSmallerScrollbars) {
+    //   document.documentElement.classList.add("has-custom-scrollbars");
+    // }
+    // if (this.hasLightTheme) {
+    //   document.documentElement.setAttribute("data-theme", "light");
+    // }
+    // this.menuWidth = this.settings.menuWidth;
   },
   watch: {
-    hasSmallerScrollbars(newValue, oldValue) {
-      if (newValue) {
-        document.documentElement.classList.add("has-custom-scrollbars");
-      } else {
-        document.documentElement.classList.remove("has-custom-scrollbars");
-      }
-    },
-    hasLightTheme(newValue, oldValue) {
-      if (newValue) {
-        document.documentElement.setAttribute("data-theme", "light");
-      } else {
-        document.documentElement.removeAttribute("data-theme");
-      }
-    },
+    // hasSmallerScrollbars(newValue, oldValue) {
+    //   if (newValue) {
+    //     document.documentElement.classList.add("has-custom-scrollbars");
+    //   } else {
+    //     document.documentElement.classList.remove("has-custom-scrollbars");
+    //   }
+    // },
+    // hasLightTheme(newValue, oldValue) {
+    //   if (newValue) {
+    //     document.documentElement.setAttribute("data-theme", "light");
+    //   } else {
+    //     document.documentElement.removeAttribute("data-theme");
+    //   }
+    // },
   },
   computed: {
-    ...mapState(["activeContainers", "isMobile", "settings"]),
-    ...mapGetters(["visibleContainers"]),
-    hasSmallerScrollbars() {
-      return this.settings.smallerScrollbars;
-    },
-    hasLightTheme() {
-      return this.settings.lightTheme;
-    },
+    // ...mapState(["activeContainers", "isMobile", "settings"]),
+    // ...mapGetters(["visibleContainers"]),
+    // hasSmallerScrollbars() {
+    //   return this.settings.smallerScrollbars;
+    // },
+    // hasLightTheme() {
+    //   return this.settings.lightTheme;
+    // },
   },
   methods: {
-    ...mapActions({
-      fetchContainerList: "FETCH_CONTAINERS",
-      removeActiveContainer: "REMOVE_ACTIVE_CONTAINER",
-      updateSetting: "UPDATE_SETTING",
-    }),
+    // ...mapActions({
+    //   fetchContainerList: "FETCH_CONTAINERS",
+    //   removeActiveContainer: "REMOVE_ACTIVE_CONTAINER",
+    //   updateSetting: "UPDATE_SETTING",
+    // }),
     onResized(e) {
       if (e.length == 2) {
         const menuWidth = e[0].size;

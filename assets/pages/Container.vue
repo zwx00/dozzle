@@ -8,12 +8,9 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
-
-import LogViewerWithSource from "../components/LogViewerWithSource";
-import ScrollableView from "../components/ScrollableView";
-import ContainerTitle from "../components/ContainerTitle";
-import store from "../store";
+import LogViewerWithSource from "../components/LogViewerWithSource.vue";
+import ScrollableView from "../components/ScrollableView.vue";
+import ContainerTitle from "../components/ContainerTitle.vue";
 
 export default {
   props: ["id", "name"],
@@ -39,8 +36,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(["activeContainers"]),
-    ...mapGetters(["allContainersById"]),
+    activeContainers: [],
+    allContainersById: {},
   },
   watch: {
     id() {

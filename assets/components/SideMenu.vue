@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
+// import { mapActions, mapGetters, mapState } from "vuex";
 
-import Icon from "./Icon";
+import Icon from "./Icon.vue";
 
 export default {
   props: [],
@@ -59,13 +59,13 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["activeContainers"]),
-    ...mapGetters(["activeContainersById", "visibleContainers"]),
+    // ...mapState(["activeContainers"]),
+    // ...mapGetters(["activeContainersById", "visibleContainers"]),
   },
   methods: {
-    ...mapActions({
-      appendActiveContainer: "APPEND_ACTIVE_CONTAINER",
-    }),
+    // ...mapActions({
+    //   appendActiveContainer: "APPEND_ACTIVE_CONTAINER",
+    // }),
   },
 };
 </script>
