@@ -29,13 +29,13 @@
           :title="item.name"
         >
           <div class="hide-overflow">
-            <span
+            <!-- <span
               @click.stop.prevent="appendActiveContainer(item)"
               class="icon is-small will-append-container"
               :class="{ 'is-active': activeContainersById[item.id] }"
             >
               <icon name="pin"></icon>
-            </span>
+            </span> -->
             {{ item.name }}
           </div>
         </router-link>
