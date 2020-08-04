@@ -44,9 +44,8 @@
   </aside>
 </template>
 
-<script>
-// import { mapActions, mapGetters, mapState } from "vuex";
-
+<script lang="ts">
+import { useContainers } from "../composition/containers";
 import Icon from "./Icon.vue";
 
 export default {
@@ -55,17 +54,12 @@ export default {
   components: {
     Icon,
   },
-  data() {
-    return {};
-  },
-  computed: {
-    // ...mapState(["activeContainers"]),
-    // ...mapGetters(["activeContainersById", "visibleContainers"]),
-  },
-  methods: {
-    // ...mapActions({
-    //   appendActiveContainer: "APPEND_ACTIVE_CONTAINER",
-    // }),
+  setup() {
+    const { visibleContainers } = useContainers();
+
+    return {
+      visibleContainers,
+    };
   },
 };
 </script>
