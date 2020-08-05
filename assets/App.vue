@@ -1,24 +1,13 @@
 <template>
   <main>
     <side-menu></side-menu>
-
     <router-view></router-view>
-
-    <button
-      @click="collapseNav = !collapseNav"
-      class="button is-small is-rounded is-settings-control"
-      :class="{ collapsed: collapseNav }"
-      id="hide-nav"
-      v-if="!isMobile"
-    >
-      <span class="icon">
-        <icon :name="collapseNav ? 'chevron-right' : 'chevron-left'"></icon>
-      </span>
-    </button>
   </main>
 </template>
 
 <script>
+import Pane from "./components/Pane.vue";
+import Splitpanes from "./components/Splitpanes.vue";
 import LogViewerWithSource from "./components/LogViewerWithSource.vue";
 import ScrollableView from "./components/ScrollableView.vue";
 import SideMenu from "./components/SideMenu.vue";
@@ -37,6 +26,8 @@ export default {
     ScrollableView,
     Search,
     ContainerTitle,
+    Pane,
+    Splitpanes,
   },
   data() {
     return {

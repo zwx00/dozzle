@@ -35,7 +35,7 @@
   "hotkeys-js": "^3.8.1",
   "lodash-es": "^4.17.15",
   "semver": "^7.3.2",
-  "splitpanes": "^2.2.1",
+  "splitpanes": "https://github.com/antoniandre/splitpanes.git#v2.2.1",
   "store": "^2.0.12",
   "vue": "^3.0.0-rc.5",
   "vue-meta": "^2.4.0",
