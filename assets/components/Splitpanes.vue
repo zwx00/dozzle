@@ -594,6 +594,7 @@ export default {
     this.resetPaneSizes();
     this.$emit("ready");
     this.ready = true;
+    setTimeout(() => console.log(this.$children), 2000);
   },
 
   render() {
@@ -609,7 +610,7 @@ export default {
           },
         ],
       },
-      this.$slots.default
+      this.$slots.default()
     );
   },
 };

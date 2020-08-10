@@ -1,7 +1,13 @@
 <template>
   <main>
-    <side-menu></side-menu>
-    <router-view></router-view>
+    <splitpanes>
+      <pane>
+        <side-menu></side-menu>
+      </pane>
+      <pane>
+        <router-view></router-view>
+      </pane>
+    </splitpanes>
   </main>
 </template>
 
