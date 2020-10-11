@@ -12,8 +12,9 @@
 </template>
 
 <script>
-import Pane from "./components/Pane.vue";
-import Splitpanes from "./components/Splitpanes.vue";
+import Pane from "splitpanes/src/components/splitpanes/pane.vue";
+import Splitpanes from "splitpanes/src/components/splitpanes/splitpanes.vue";
+
 import LogViewerWithSource from "./components/LogViewerWithSource.vue";
 import ScrollableView from "./components/ScrollableView.vue";
 import SideMenu from "./components/SideMenu.vue";
