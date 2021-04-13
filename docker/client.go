@@ -206,7 +206,7 @@ func (d *dockerClient) Events(ctx context.Context) (<-chan ContainerEvent, <-cha
 					return
 				}
 				messages <- ContainerEvent{
-					ActorID: message.Actor.ID[:12],
+					ActorID: message.Actor.ID,
 					Name:    message.Action,
 				}
 			}

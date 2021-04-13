@@ -84,7 +84,7 @@ export default {
       }
       const key = data.substring(0, i);
       const date = new Date(key);
-      const message = data.substring(i);
+      const message = data.substring(i).replaceAll('\\n', '\n');
       return { key, date, message };
     },
   },
